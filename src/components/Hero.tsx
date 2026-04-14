@@ -81,7 +81,7 @@ export default function Hero() {
             New
           </span>
           <span className="text-white/80 text-sm font-body pr-2">
-            Now in 15+ cities.
+            Now in Mumbai | NCR
           </span>
         </motion.div>
 
@@ -125,31 +125,7 @@ export default function Hero() {
           </RippleButton>
         </motion.div>
 
-        {/* Partners bar */}
-        <motion.div
-          className="mt-auto pt-16 pb-8 flex flex-col items-center gap-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
-        >
-          <div className="liquid-glass rounded-full px-4 py-2">
-            <span className="text-white/60 text-xs font-body">
-              Available at venues like
-            </span>
-          </div>
-          <div className="flex items-center gap-12 md:gap-16">
-            {partners.map((name, i) => (
-              <span
-                key={name}
-                ref={(el) => { if (el) partnerRefs.current[i] = el }}
-                className="text-2xl md:text-3xl font-heading italic text-white"
-                style={{ opacity: 0 }}
-              >
-                {name}
-              </span>
-            ))}
-          </div>
-        </motion.div>
+
       </div>
     </section>
   )
