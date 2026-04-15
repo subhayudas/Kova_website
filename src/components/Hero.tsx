@@ -9,7 +9,7 @@ import RippleButton from './ui/RippleButton'
 
 const HERO_VIDEO = '/herobackgroundvideo.mp4'
 
-const partners = ['Klub', 'Fabric', 'Pacha', 'Berghain', 'Marquee']
+
 
 export default function Hero() {
   const videoRef = useParallax<HTMLVideoElement>(0.15)
