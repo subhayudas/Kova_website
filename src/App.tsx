@@ -3,7 +3,6 @@ import Hero from './components/Hero'
 import StartSection from './components/StartSection'
 import FeaturesChess from './components/FeaturesChess'
 import FeaturesGrid from './components/FeaturesGrid'
-import Stats from './components/Stats'
 import Testimonials from './components/Testimonials'
 import CtaFooter from './components/CtaFooter'
 import CustomCursor from './components/ui/CustomCursor'
@@ -20,7 +19,6 @@ export default function App() {
         <StartSection />
         <FeaturesChess />
         <FeaturesGrid />
-        <Stats />
         <Testimonials />
         <CtaFooter />
       </div>

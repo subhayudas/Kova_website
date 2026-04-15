@@ -97,10 +97,10 @@ export default function FeaturesChess() {
     <section ref={sectionRef} className="py-24 px-6 md:px-16 lg:px-24 max-w-7xl mx-auto w-full">
       {/* Section header */}
       <div ref={headerRef} className="flex flex-col items-center text-center mb-20 gap-4">
-        <div className="liquid-glass rounded-full px-3.5 py-1">
-          <span className="text-white text-xs font-medium font-body">Features</span>
+        <div className="liquid-glass border-gold-shimmer rounded-full px-3.5 py-1 flex items-center bg-gold-gradient/10 border border-[#D4AF37]/30">
+          <span className="text-[#D4AF37] text-xs font-medium font-body uppercase tracking-widest">Features</span>
         </div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-gold-gradient tracking-tight leading-[0.9]">
           <BlurText text="Everything your night needs." delay={100} />
         </h2>
       </div>
@@ -118,7 +118,7 @@ export default function FeaturesChess() {
           </p>
           <RippleButton
             href="#"
-            className="liquid-glass-strong rounded-full px-5 py-2.5 flex items-center gap-2 text-white text-sm font-body font-medium w-fit"
+            className="liquid-glass-strong rounded-full px-5 py-2.5 flex items-center gap-2 text-white text-sm font-body font-medium w-fit hover:text-[#D4AF37] transition-colors"
           >
             Browse Venues
             <ArrowUpRight size={16} />
@@ -126,7 +126,7 @@ export default function FeaturesChess() {
         </div>
 
         <div ref={card1Ref} className="flex-1 tilt-card card-glow">
-          <div className="liquid-glass rounded-2xl overflow-hidden">
+          <div className="liquid-glass border-gold-shimmer rounded-2xl overflow-hidden">
             <video
               src="/tablebooking.mp4"
               className="w-full h-auto object-cover"
@@ -152,7 +152,7 @@ export default function FeaturesChess() {
           </p>
           <RippleButton
             href="#"
-            className="liquid-glass-strong rounded-full px-5 py-2.5 flex items-center gap-2 text-white text-sm font-body font-medium w-fit"
+            className="liquid-glass-strong rounded-full px-5 py-2.5 flex items-center gap-2 text-white text-sm font-body font-medium w-fit hover:text-[#D4AF37] transition-colors"
           >
             Book Now
             <ArrowUpRight size={16} />
@@ -160,7 +160,7 @@ export default function FeaturesChess() {
         </div>
 
         <div ref={card2Ref} className="flex-1 tilt-card card-glow">
-          <div className="liquid-glass rounded-2xl overflow-hidden">
+          <div className="liquid-glass border-gold-shimmer rounded-2xl overflow-hidden">
             <video
               src="/zerofriction.mp4"
               className="w-full h-auto object-cover"

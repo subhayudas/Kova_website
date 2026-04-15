@@ -14,13 +14,16 @@
   --color-secondary-foreground: hsl(0 0% 100%);
   --color-muted: hsl(213 35% 60%);
   --color-muted-foreground: hsl(0 0% 100% / 0.7);
-  --color-accent: hsl(213 45% 72%);
-  --color-accent-foreground: hsl(0 0% 100%);
+  --color-accent: hsl(43 74% 49%);
+  --color-accent-foreground: hsl(0 0% 9%);
   --color-destructive: hsl(0 84.2% 60.2%);
   --color-border: hsl(0 0% 100% / 0.2);
   --color-input: hsl(0 0% 100% / 0.2);
-  --color-ring: hsl(0 0% 100% / 0.3);
+  --color-ring: hsl(43 74% 49% / 0.5);
   --radius: 9999px;
+  
+  --color-gold-start: #D4AF37;
+  --color-gold-end: #FBF5B7;
 }
 
 :root {
@@ -135,4 +138,43 @@ html {
     pointer-events: none;
     z-index: 1;
   }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, var(--color-gold-start) 0%, var(--color-gold-end) 50%, var(--color-gold-start) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, var(--color-gold-start) 0%, var(--color-gold-end) 50%, var(--color-gold-start) 100%);
+  }
+
+  .border-gold-shimmer {
+    position: relative;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+  }
+
+  .border-gold-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.8), rgba(212, 175, 55, 0), rgba(251, 245, 183, 0.8), rgba(212, 175, 55, 0));
+    background-size: 200% 200%;
+    animation: goldShimmer 3s linear infinite;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+@keyframes goldShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }

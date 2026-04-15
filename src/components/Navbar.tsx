@@ -56,7 +56,7 @@ export default function Navbar() {
     >
       {/* Logo */}
       <div className="flex items-center">
-        <img src={logoIcon} alt="Kova" className="h-10 w-10 rounded-full" />
+        <img src={logoIcon} alt="Entrava" className="h-10 w-10 rounded-full" />
       </div>
 
       {/* Center nav pill — desktop only */}
@@ -68,12 +68,12 @@ export default function Navbar() {
             className="relative px-3 py-2 text-sm font-medium text-white/90 font-body hover:text-white transition-colors group"
           >
             {link}
-            <span className="absolute bottom-1 left-3 right-3 h-px bg-white/60 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            <span className="absolute bottom-1 left-3 right-3 h-px bg-gold-gradient scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
           </a>
         ))}
         <RippleButton
           href="#"
-          className="flex items-center gap-1 bg-white text-black rounded-full px-3.5 py-1.5 text-sm font-medium font-body hover:bg-white/90 transition-colors"
+          className="flex items-center gap-1 bg-gold-gradient text-black rounded-full px-3.5 py-1.5 text-sm font-medium font-body hover:opacity-90 transition-opacity"
         >
           <span ref={bookBtnRef as React.Ref<HTMLSpanElement>} className="flex items-center gap-1">
             Book Now
@@ -86,7 +86,7 @@ export default function Navbar() {
       <div className="flex md:hidden">
         <RippleButton
           href="#"
-          className="flex items-center gap-1 bg-white text-black rounded-full px-3.5 py-1.5 text-sm font-medium font-body"
+          className="flex items-center gap-1 bg-gold-gradient text-black rounded-full px-3.5 py-1.5 text-sm font-medium font-body hover:opacity-90 transition-opacity"
         >
           Book Now
           <ArrowUpRight size={14} />

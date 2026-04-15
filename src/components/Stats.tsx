@@ -19,7 +19,7 @@ function StatCounter({ value, label }: { value: string; label: string }) {
     <div className="flex flex-col gap-2 text-center">
       <span
         ref={ref}
-        className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white"
+        className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-gold-gradient"
       >
         0
       </span>
@@ -81,7 +81,7 @@ export default function Stats() {
 
       {/* Content */}
       <div className="relative z-10 px-6 md:px-16 lg:px-24 max-w-5xl mx-auto w-full">
-        <div ref={glassCardRef} className="liquid-glass rounded-3xl p-12 md:p-16" style={{ opacity: 0 }}>
+        <div ref={glassCardRef} className="liquid-glass border-gold-shimmer rounded-3xl p-12 md:p-16" style={{ opacity: 0 }}>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {stats.map(({ value, label }) => (
               <StatCounter key={label} value={value} label={label} />

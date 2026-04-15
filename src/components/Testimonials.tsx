@@ -6,7 +6,7 @@ import { useGSAPScrollReveal } from '../hooks/useGSAPScrollReveal'
 const testimonials = [
   {
     quote:
-      'Walked straight past the queue into our reserved booth. KOVA made the whole night seamless.',
+      'Walked straight past the queue into our reserved booth. ENTRAVA made the whole night seamless.',
     name: 'Jamie Torres',
     role: 'Regular at Tape London',
   },
@@ -18,7 +18,7 @@ const testimonials = [
   },
   {
     quote:
-      "We use KOVA every weekend now. It's the only way to guarantee a proper night out without the chaos.",
+      "We use ENTRAVA every weekend now. It's the only way to guarantee a proper night out without the chaos.",
     name: 'Alex Richter',
     role: 'Club-goer, Berlin',
   },

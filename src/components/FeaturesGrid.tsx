@@ -18,7 +18,7 @@ const features = [
   {
     icon: MapPin,
     title: '15+ Cities',
-    body: "From London to Ibiza, KOVA covers the world's best nightlife destinations.",
+    body: "From London to Ibiza, ENTRAVA covers the world's best nightlife destinations.",
   },
   {
     icon: Shield,
@@ -96,7 +96,7 @@ export default function FeaturesGrid() {
       {/* Section header */}
       <div ref={headerRef} className="flex flex-col items-center text-center mb-16 gap-4">
         <div className="liquid-glass rounded-full px-3.5 py-1">
-          <span className="text-white text-xs font-medium font-body">Why KOVA</span>
+          <span className="text-white text-xs font-medium font-body">Why ENTRAVA</span>
         </div>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9]">
           <BlurText text="The difference is everything." delay={100} />

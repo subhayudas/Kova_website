@@ -1,13 +1,10 @@
 import { useEffect, useRef } from 'react'
 import { ArrowUpRight } from 'lucide-react'
-import HlsVideo from './HlsVideo'
 import BlurText from './BlurText'
 import { gsap } from '../lib/gsap'
 import { useParallax } from '../hooks/useParallax'
 import { useMagneticButton } from '../hooks/useMagneticButton'
 import RippleButton from './ui/RippleButton'
-
-const CTA_VIDEO = 'https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8'
 
 export default function CtaFooter() {
   const videoRef = useParallax<HTMLDivElement>(0.2)
@@ -57,9 +54,13 @@ export default function CtaFooter() {
         ref={videoRef}
         className="absolute inset-0 w-full h-[120%] -top-[10%]"
       >
-        <HlsVideo
-          src={CTA_VIDEO}
+        <video
+          src="/2026946_3d_Abstract_1280x720.mp4"
           className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
         />
       </div>
 
@@ -80,7 +81,7 @@ export default function CtaFooter() {
         ref={contentRef}
         className="relative z-10 px-6 md:px-16 lg:px-24 py-40 flex flex-col items-center text-center gap-8"
       >
-        <h2 data-reveal className="text-5xl md:text-6xl lg:text-7xl font-heading italic text-white leading-[0.85] max-w-2xl">
+        <h2 data-reveal className="text-5xl md:text-6xl lg:text-7xl font-heading italic text-gold-gradient leading-[0.85] max-w-2xl">
           <BlurText text="Your best night out is one tap away." delay={100} />
         </h2>
 
@@ -91,7 +92,7 @@ export default function CtaFooter() {
         <div data-reveal className="flex items-center gap-4 flex-wrap justify-center">
           <RippleButton
             href="#"
-            className="liquid-glass-strong rounded-full px-6 py-3 flex items-center gap-2 text-white text-sm font-body font-medium"
+            className="liquid-glass-strong rounded-full px-6 py-3 flex items-center gap-2 text-white text-sm font-body font-medium hover:text-[#D4AF37] transition-colors"
           >
             <span ref={bookBtnRef as React.Ref<HTMLSpanElement>} className="flex items-center gap-2">
               Book a Table
@@ -100,7 +101,7 @@ export default function CtaFooter() {
           </RippleButton>
           <RippleButton
             href="#"
-            className="bg-white text-black rounded-full px-6 py-3 text-sm font-body font-medium hover:bg-white/90 transition-colors"
+            className="bg-gold-gradient text-black rounded-full px-6 py-3 text-sm font-body font-medium hover:opacity-90 transition-opacity"
           >
             <span ref={viewBtnRef as React.Ref<HTMLSpanElement>}>
               View Venues
@@ -111,7 +112,7 @@ export default function CtaFooter() {
         {/* Footer bar */}
         <div className="mt-32 pt-8 border-t border-white/10 w-full flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/40 text-xs font-body">
-            © 2026 KOVA. All rights reserved.
+            © 2026 ENTRAVA. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             {footerLinks.map((link, i) => (

@@ -72,12 +72,12 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center text-center px-6" style={{ paddingTop: 150 }}>
         {/* Badge */}
         <motion.div
-          className="liquid-glass rounded-full px-1 py-1 flex items-center gap-2 mb-8"
+          className="liquid-glass border-gold-shimmer rounded-full px-1 py-1 flex items-center gap-2 mb-8"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6, ease: 'easeOut' }}
         >
-          <span className="bg-white text-black rounded-full px-3 py-1 text-xs font-semibold font-body">
+          <span className="bg-gold-gradient text-black rounded-full px-3 py-1 text-xs font-semibold font-body">
             New
           </span>
           <span className="text-white/80 text-sm font-body pr-2">
@@ -86,7 +86,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Heading */}
-        <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-heading italic text-white leading-[0.85] max-w-3xl tracking-[-4px] mb-6">
+        <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-heading italic text-gold-gradient leading-[0.85] max-w-3xl tracking-[-4px] mb-6">
           <BlurText text="Your Night. Your Table. Reserved." delay={100} />
         </h1>
 
