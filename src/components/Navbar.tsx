@@ -1,15 +1,24 @@
 import { useEffect, useRef } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import logoIcon from '../assets/logo-icon.png'
 import { gsap, ScrollTrigger } from '../lib/gsap'
 import { useMagneticButton } from '../hooks/useMagneticButton'
 import RippleButton from './ui/RippleButton'
 
-const navLinks = ['Home', 'Venues', 'How It Works', 'Pricing', 'Contact']
+const navLinks = [
+  { label: 'Home', to: '/' },
+  { label: 'Why Entrava', to: '/why' },
+  { label: 'Venues', to: '#' },
+  { label: 'Pricing', to: '#' },
+  { label: 'Contact', to: '#' },
+]
 
 export default function Navbar() {
   const navRef = useRef<HTMLElement>(null)
   const bookBtnRef = useMagneticButton<HTMLAnchorElement>(0.25)
+  const location = useLocation()
+  const isHome = location.pathname === '/'
 
   // Slide in from top on mount
   useEffect(() => {
@@ -23,8 +32,17 @@ export default function Navbar() {
     return () => ctx.revert()
   }, [])
 
-  // Scroll-aware background
+  // Scroll-aware background — only on home where #hero-section exists
   useEffect(() => {
+    if (!isHome) {
+      // Always show glass background on inner pages
+      gsap.set(navRef.current, {
+        backgroundColor: 'rgba(0,0,0,0.75)',
+        backdropFilter: 'blur(20px)',
+      })
+      return
+    }
+
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: '#hero-section',
@@ -46,7 +64,7 @@ export default function Navbar() {
       })
     })
     return () => ctx.revert()
-  }, [])
+  }, [isHome])
 
   return (
     <nav
@@ -56,21 +74,41 @@ export default function Navbar() {
     >
       {/* Logo */}
       <div className="flex items-center">
-        <img src={logoIcon} alt="Entrava" className="h-10 w-10 rounded-full" />
+        <Link to="/">
+          <img src={logoIcon} alt="Entrava" className="h-10 w-10 rounded-full" />
+        </Link>
       </div>
 
       {/* Center nav pill — desktop only */}
       <div className="hidden md:flex items-center liquid-glass rounded-full px-1.5 py-1 gap-1">
-        {navLinks.map((link) => (
-          <a
-            key={link}
-            href="#"
-            className="relative px-3 py-2 text-sm font-medium text-white/90 font-body hover:text-white transition-colors group"
-          >
-            {link}
-            <span className="absolute bottom-1 left-3 right-3 h-px bg-gold-gradient scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-          </a>
-        ))}
+        {navLinks.map(({ label, to }) => {
+          const isActive = to !== '#' && location.pathname === to
+          return to === '#' ? (
+            <a
+              key={label}
+              href="#"
+              className="relative px-3 py-2 text-sm font-medium text-white/90 font-body hover:text-white transition-colors group"
+            >
+              {label}
+              <span className="absolute bottom-1 left-3 right-3 h-px bg-gold-gradient scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            </a>
+          ) : (
+            <Link
+              key={label}
+              to={to}
+              className={`relative px-3 py-2 text-sm font-medium font-body transition-colors group ${
+                isActive ? 'text-[#D4AF37]' : 'text-white/90 hover:text-white'
+              }`}
+            >
+              {label}
+              <span
+                className={`absolute bottom-1 left-3 right-3 h-px bg-gold-gradient transition-transform duration-300 origin-left ${
+                  isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`}
+              />
+            </Link>
+          )
+        })}
         <RippleButton
           href="#"
           className="flex items-center gap-1 bg-gold-gradient text-black rounded-full px-3.5 py-1.5 text-sm font-medium font-body hover:opacity-90 transition-opacity"

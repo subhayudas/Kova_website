@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import StartSection from './components/StartSection'
@@ -7,6 +8,20 @@ import Testimonials from './components/Testimonials'
 import CtaFooter from './components/CtaFooter'
 import CustomCursor from './components/ui/CustomCursor'
 import ScrollProgressBar from './components/ui/ScrollProgressBar'
+import WhyEntrava from './pages/WhyEntrava'
+
+function Home() {
+  return (
+    <div className="bg-black">
+      <Hero />
+      <StartSection />
+      <FeaturesChess />
+      <FeaturesGrid />
+      <Testimonials />
+      <CtaFooter />
+    </div>
+  )
+}
 
 export default function App() {
   return (
@@ -14,14 +29,10 @@ export default function App() {
       <CustomCursor />
       <ScrollProgressBar />
       <Navbar />
-      <Hero />
-      <div className="bg-black">
-        <StartSection />
-        <FeaturesChess />
-        <FeaturesGrid />
-        <Testimonials />
-        <CtaFooter />
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/why" element={<WhyEntrava />} />
+      </Routes>
     </div>
   )
 }
