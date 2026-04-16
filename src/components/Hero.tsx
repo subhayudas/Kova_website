@@ -81,47 +81,74 @@ export default function Hero() {
             New
           </span>
           <span className="text-white/80 text-sm font-body pr-2">
-            Now in Mumbai | NCR
+            NOW IN MUMBAI AND NCR
           </span>
         </motion.div>
 
+        {/* Above title */}
+        <motion.p
+          className="text-sm md:text-base text-white/60 font-body font-light tracking-wide mb-4"
+          initial={{ filter: 'blur(10px)', opacity: 0, y: 20 }}
+          animate={{ filter: 'blur(0px)', opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6, ease: 'easeOut' }}
+        >
+          Discover. Pre-Book. Enter, Hassle-Free.
+        </motion.p>
+
         {/* Heading */}
-        <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-heading italic text-gold-gradient leading-[0.85] max-w-3xl tracking-[-4px] mb-6">
-          <BlurText text="Your Night. Your Table. Reserved." delay={100} />
+        <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-heading italic leading-[0.85] max-w-3xl tracking-[-4px] mb-6">
+          <BlurText text="Use Entrava." delay={100} wordClassName="text-gold-gradient" />
         </h1>
 
         {/* Subtext */}
         <motion.p
-          className="text-sm md:text-base text-white font-body font-light leading-tight max-w-md mb-8"
+          className="text-sm md:text-base text-white font-body font-light leading-tight max-w-md mb-4"
           initial={{ filter: 'blur(10px)', opacity: 0, y: 20 }}
           animate={{ filter: 'blur(0px)', opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6, ease: 'easeOut' }}
         >
-          Skip the queue. Book premium seats at the best nightclubs and bars — instantly.
+          To streamline your clubbing weekends, without the chaos. Skip the queue tonight.
+        </motion.p>
+
+        {/* Description */}
+        <motion.p
+          className="text-xs md:text-sm text-white/50 font-body font-light leading-relaxed max-w-md mb-8"
+          initial={{ filter: 'blur(10px)', opacity: 0, y: 20 }}
+          animate={{ filter: 'blur(0px)', opacity: 1, y: 0 }}
+          transition={{ delay: 0.95, duration: 0.6, ease: 'easeOut' }}
+        >
+          Discover what events are on tonight, pre-book your entry or table in seconds, receive your QR confirmation, show it at the door and walk straight in. No more crowd, no more uncertainty.
         </motion.p>
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex items-center gap-4"
+          className="flex flex-wrap items-center justify-center gap-4"
           initial={{ filter: 'blur(10px)', opacity: 0, y: 20 }}
           animate={{ filter: 'blur(0px)', opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.6, ease: 'easeOut' }}
         >
           <RippleButton
             href="#"
-            className="liquid-glass-strong rounded-full px-5 py-2.5 flex items-center gap-2 text-white text-sm font-body font-medium hover:bg-white/10 transition-colors"
+            className="flex items-center gap-2 bg-gold-gradient text-black rounded-full px-5 py-2.5 text-sm font-body font-medium hover:opacity-90 transition-opacity"
           >
             <span ref={bookBtnRef as React.Ref<HTMLSpanElement>} className="flex items-center gap-2">
-              Book a Table
+              Download the App
               <ArrowUpRight size={16} />
             </span>
           </RippleButton>
           <RippleButton
             href="#"
-            className="flex items-center gap-2 text-white text-sm font-body font-medium hover:text-white/80 transition-colors"
+            className="liquid-glass-strong rounded-full px-5 py-2.5 flex items-center gap-2 text-white text-sm font-body font-medium hover:bg-white/10 transition-colors"
           >
             <ArrowUpRight size={16} />
             Explore Venues
+          </RippleButton>
+          <RippleButton
+            href="#"
+            className="flex items-center gap-2 text-white/70 text-sm font-body font-medium hover:text-white transition-colors"
+          >
+            <ArrowUpRight size={16} />
+            How it Works
           </RippleButton>
         </motion.div>
 

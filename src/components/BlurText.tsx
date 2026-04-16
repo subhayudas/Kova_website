@@ -4,10 +4,11 @@ import { motion, useInView } from 'motion/react'
 interface BlurTextProps {
   text: string
   className?: string
+  wordClassName?: string
   delay?: number // ms per word
 }
 
-export default function BlurText({ text, className = '', delay = 100 }: BlurTextProps) {
+export default function BlurText({ text, className = '', wordClassName = '', delay = 100 }: BlurTextProps) {
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, margin: '0px 0px -80px 0px' })
 
@@ -18,7 +19,7 @@ export default function BlurText({ text, className = '', delay = 100 }: BlurText
       {words.map((word, i) => (
         <motion.span
           key={i}
-          className="inline-block mr-[0.25em]"
+          className={`inline-block mr-[0.25em] ${wordClassName}`}
           initial={{ filter: 'blur(10px)', opacity: 0, y: 50 }}
           animate={
             inView
