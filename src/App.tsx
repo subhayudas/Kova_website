@@ -9,6 +9,7 @@ import CtaFooter from './components/CtaFooter'
 import CustomCursor from './components/ui/CustomCursor'
 import ScrollProgressBar from './components/ui/ScrollProgressBar'
 import WhyEntrava from './pages/WhyEntrava'
+import PromotersVenues from './pages/PromotersVenues'
 
 function Home() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/why" element={<WhyEntrava />} />
+        <Route path="/promoters-venues" element={<PromotersVenues />} />
       </Routes>
     </div>
   )

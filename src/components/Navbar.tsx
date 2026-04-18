@@ -8,9 +8,7 @@ import RippleButton from './ui/RippleButton'
 const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'Why Entrava', to: '/why' },
-  { label: 'Venues', to: '#' },
-  { label: 'Pricing', to: '#' },
-  { label: 'Contact', to: '#' },
+  { label: 'Promoters & Venues', to: '/promoters-venues' },
 ]
 
 export default function Navbar() {
