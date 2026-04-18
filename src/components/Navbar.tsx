@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
-import logoIcon from '../assets/logo-icon.png'
 import { gsap, ScrollTrigger } from '../lib/gsap'
 import { useMagneticButton } from '../hooks/useMagneticButton'
 import RippleButton from './ui/RippleButton'
@@ -75,7 +74,7 @@ export default function Navbar() {
       {/* Logo */}
       <div className="flex items-center">
         <Link to="/">
-          <img src={logoIcon} alt="Entrava" className="h-10 w-10 rounded-full" />
+          <img src="/logo.png" alt="Entrava" className="h-24 w-auto" />
         </Link>
       </div>
 

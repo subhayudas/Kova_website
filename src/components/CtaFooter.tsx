@@ -111,6 +111,7 @@ export default function CtaFooter() {
 
         {/* Footer bar */}
         <div className="mt-32 pt-8 border-t border-white/10 w-full flex flex-col md:flex-row items-center justify-between gap-4">
+          <img src="/logo.png" alt="Entrava" className="h-20 w-auto opacity-90" />
           <p className="text-white/40 text-xs font-body">
             © 2026 ENTRAVA. All rights reserved.
           </p>
