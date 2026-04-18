@@ -10,6 +10,7 @@ import CustomCursor from './components/ui/CustomCursor'
 import ScrollProgressBar from './components/ui/ScrollProgressBar'
 import WhyEntrava from './pages/WhyEntrava'
 import PromotersVenues from './pages/PromotersVenues'
+import Features from './pages/Features'
 
 function Home() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/why" element={<WhyEntrava />} />
         <Route path="/promoters-venues" element={<PromotersVenues />} />
+        <Route path="/features" element={<Features />} />
       </Routes>
     </div>
   )

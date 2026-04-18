@@ -8,6 +8,7 @@ import RippleButton from './ui/RippleButton'
 const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'Why Entrava', to: '/why' },
+  { label: 'Features', to: '/features' },
   { label: 'Promoters & Venues', to: '/promoters-venues' },
 ]
 
